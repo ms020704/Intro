@@ -1,10 +1,12 @@
 /* 기본 스타일 초기화 */
+/*브라우저 기본 스타일 제거 → 일관된 레이아웃 유지*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/*가독성 좋은 글꼴과 줄 간격 설정 → 사용자 읽기 편함*/
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -12,6 +14,8 @@ body {
 }
 
 /* 내비게이션 스타일 */
+/*어두운 색상으로 대비를 주어 메뉴 강조
+sticky 속성으로 스크롤해도 항상 상단 고정 → 접근성 향상*/
 nav {
   background-color: #333;
   position: sticky;
@@ -41,6 +45,8 @@ nav ul li a:hover {
 }
 
 /* 섹션 공통 스타일 */
+/*모든 섹션 간 간격 확보 → 페이지 흐름이 부드럽게 느껴짐
+중앙 정렬로 시선 집중 유도*/
 section {
   padding: 4rem 2rem;
   text-align: center;
@@ -60,6 +66,8 @@ h2 {
 }
 
 /* 소개 섹션 */
+/*프로필 이미지를 원형으로 처리해 친근한 느낌
+object-fit: cover로 이미지 비율 유지하며 꽉 차게*/
 .intro {
   max-width: 800px;
   margin: 0 auto;
@@ -74,6 +82,7 @@ h2 {
 }
 
 /* 프로젝트 섹션 */
+/*CSS Grid로 반응형 카드 배치*/
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -94,6 +103,7 @@ h2 {
   transform: translateY(-5px);
 }
 
+/*project-link는 컬러 강조와 밑줄 효과로 클릭 유도*/
 .project-link {
   display: inline-block;
   margin-top: 1rem;
@@ -107,6 +117,9 @@ h2 {
 }
 
 /* 스킬 섹션 */
+/*기술 스택을 태그처럼 보여주기
+색상 강조로 중요 기술을 한눈에 확인 가능
+*/
 .skills-list {
   list-style: none;
   display: flex;
@@ -125,11 +138,13 @@ h2 {
 }
 
 /* 연락처 섹션 */
+/*색상 일관성을 통해 디자인 조화감 부여*/
 #contact a {
   color: #007bff;
   text-decoration: none;
 }
 
+/*링크는 hover 시 강조 효과로 상호작용 유도*/
 #contact a:hover {
   text-decoration: underline;
 }
@@ -144,6 +159,8 @@ footer {
 }
 
 /* 반응형 디자인 */
+/*모바일 화면에서 메뉴는 수직 정렬
+그리드는 한 줄로 바뀜 → 모든 기기에서 보기 좋게 설계*/
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;

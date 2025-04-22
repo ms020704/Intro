@@ -1,10 +1,11 @@
 /* 기본 스타일 초기화 */
 * {
-  margin: 0;
+  margin: 0; /*목적: 브라우저 기본 여백을 제거하여 통일된 스타일 제공*/
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /*box-sizing: border-box는 padding과 border를 포함한 크기 계산 → 디자인 예측 가능성 증가*/
 }
 
+/*폰트와 색상, 줄 간격 등 전체적인 글 스타일 설정*/
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -12,6 +13,7 @@ body {
 }
 
 /* 컨테이너 */
+/*.container: 가운데 정렬, 레이아웃 중앙 집중*/
 .container {
   width: 80%;
   max-width: 1200px;
@@ -19,6 +21,7 @@ body {
 }
 
 /* 헤더 */
+/*position: sticky로 상단 고정 → 사용자 접근성 향상*/
 header {
   background: #1a3c6d;
   color: #fff;
@@ -33,6 +36,7 @@ header h1 {
   font-size: 1.8rem;
 }
 
+/*메뉴는 float 방식으로 정렬*/
 nav {
   float: right;
 }
@@ -52,11 +56,14 @@ nav ul li a {
   font-weight: bold;
 }
 
+/*hover 효과로 인터랙션 추가*/
 nav ul li a:hover {
   color: #ffd700;
 }
 
 /* 히어로 섹션 */
+/*배경 이미지를 어둡게 덧씌워 텍스트를 더 돋보이게
+중앙 정렬 텍스트 + 버튼 스타일링 → 첫 인상 강조*/
 #hero {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('https://via.placeholder.com/1200x400');
@@ -111,6 +118,7 @@ section h2 {
 }
 
 /* 특징 섹션 */
+/*.feature-grid: CSS Grid로 구성 → 다양한 해상도에서도 유연한 배치*/
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -149,6 +157,8 @@ section h2 {
 }
 
 /* 푸터 */
+/*헤더와 같은 색상을 사용해 디자인 통일감 부여
+중앙 정렬 텍스트로 마무리*/
 footer {
   background: #1a3c6d;
   color: #fff;
@@ -157,6 +167,8 @@ footer {
 }
 
 /* 반응형 디자인 */
+/*작은 화면일 때 요소를 중앙 정렬, 메뉴를 수직 배치
+float 제거하고 text-align으로 대체 → 모바일 사용자 고려*/
 @media (max-width: 768px) {
   header h1 {
     float: none;
